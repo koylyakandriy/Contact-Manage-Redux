@@ -12,7 +12,7 @@ class Contact extends Component {
 
 	//// DELETE CONTACT ////
 	onDeleteClick = id => {
-		this.props.deleteContacts(id);
+		this.props.deleteContact(id);
 	};
 
 	render() {
@@ -36,6 +36,7 @@ class Contact extends Component {
 						className="fas fa-times"
 						style={{ cursor: 'pointer', float: 'right', color: 'red' }}
 						onClick={this.onDeleteClick.bind(this, id)}
+						// onClick={() => this.onDeleteClick(id)}
 					/>
 					<Link to={`contact/edit/${id}`}>
 						<i
@@ -62,7 +63,7 @@ class Contact extends Component {
 
 Contact.propTypes = {
 	contact: PropTypes.object.isRequired,
-	deleteContacts: PropTypes.func,
+	deleteContact: PropTypes.func,
 };
 
 export default connect(
